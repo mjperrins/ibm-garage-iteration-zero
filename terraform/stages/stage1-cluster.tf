@@ -1,5 +1,5 @@
 module "dev_cluster" {
-  source = "github.com/ibm-garage-cloud/garage-terraform-modules.git//cloud-managed/cluster/ibmcloud?ref=v2.5.0"
+  source = "github.com/seansund/garage-terraform-modules.git//cloud-managed/cluster/ibmcloud?ref=private-catalog"
 
   resource_group_name     = var.resource_group_name
   cluster_name            = var.cluster_name
@@ -15,5 +15,5 @@ module "dev_cluster" {
   cluster_exists          = var.cluster_exists
   ibmcloud_api_key        = var.ibmcloud_api_key
   name_prefix             = var.name_prefix
-  is_vpc                  = false
+  is_vpc                  = var.vpc_cluster
 }
